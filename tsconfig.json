@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "outDir": "./build",
+    "rootDir": ".",
     "declarationDir": "./build",
     "esModuleInterop": true,
     "strict": true,
