@@ -1,0 +1,15 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  eslint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: yarn install and lint
+        run: |
+          yarn
+          yarn lint
