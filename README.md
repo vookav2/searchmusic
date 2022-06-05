@@ -6,7 +6,6 @@
 [codefactor]: https://www.codefactor.io/repository/github/vookav2/searchmusic
 [npm]: https://www.npmjs.com/package/@vookav2/searchmusic
 [versions]: https://www.npmjs.com/package/@vookav2/searchmusic?activeTab=versions
-[size]: https://packagephobia.now.sh/result?p=@vookav2/searchmusic
 [buymeacoffee]: https://www.buymeacoffee.com/daphinokio
 [saweria]: https://saweria.co/daphino
 [mailto]: mailto:davinomoehdanino@gmail.com
@@ -22,7 +21,6 @@ Accurate search for musics, albums, artists, with related playlists and lyrics.
 [![Codefactor](https://www.codefactor.io/repository/github/vookav2/searchmusic/badge)][codefactor]
 [![Latest version](https://img.shields.io/npm/v/@vookav2/searchmusic?color=%2335C757)][versions]
 [![Monthly downloads](https://img.shields.io/npm/dm/@vookav2/searchmusic)][npm]
-[![Install size](https://packagephobia.now.sh/badge?p=@vookav2/searchmusic)][size]
 
 <details>
   <summary>Table of contents</summary>
