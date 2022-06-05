@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
-    "got": "^11.8.2",
+    "got": "^12.1.0",
     "songlyrics": "^2.3.2"
   },
   "lint-staged": {
