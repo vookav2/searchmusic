@@ -4,9 +4,9 @@
 [issues]: https://github.com/vookav2/searchmusic/issues
 [nodejs]: https://nodejs.org/
 [codefactor]: https://www.codefactor.io/repository/github/vookav2/searchmusic
-[npm]: https://www.npmjs.com/package/searchmusic
-[versions]: https://www.npmjs.com/package/searchmusic?activeTab=versions
-[size]: https://packagephobia.now.sh/result?p=searchmusic
+[npm]: https://www.npmjs.com/package/@vookav2/searchmusic
+[versions]: https://www.npmjs.com/package/@vookav2/searchmusic?activeTab=versions
+[size]: https://packagephobia.now.sh/result?p=@vookav2/searchmusic
 [buymeacoffee]: https://www.buymeacoffee.com/daphinokio
 [saweria]: https://saweria.co/daphino
 [mailto]: mailto:davinomoehdanino@gmail.com
@@ -20,9 +20,9 @@ Accurate search for musics, albums, artists, with related playlists and lyrics.
 
 [![Tests](https://github.com/vookav2/searchmusic/actions/workflows/build.yml/badge.svg)][actions]
 [![Codefactor](https://www.codefactor.io/repository/github/vookav2/searchmusic/badge)][codefactor]
-[![Latest version](https://img.shields.io/npm/v/searchmusic?color=%2335C757)][versions]
-[![Monthly downloads](https://img.shields.io/npm/dm/searchmusic)][npm]
-[![Install size](https://packagephobia.now.sh/badge?p=searchmusic)][size]
+[![Latest version](https://img.shields.io/npm/v/@vookav2/searchmusic?color=%2335C757)][versions]
+[![Monthly downloads](https://img.shields.io/npm/dm/@vookav2/searchmusic)][npm]
+[![Install size](https://packagephobia.now.sh/badge?p=@vookav2/searchmusic)][size]
 
 <details>
   <summary>Table of contents</summary>
@@ -90,11 +90,11 @@ Accurate search for musics, albums, artists, with related playlists and lyrics.
 
 - NPM
   ```sh
-  npm install searchmusic
+  npm install @vookav2/searchmusic
   ```
 - Yarn
   ```sh
-  yarn add searchmusic
+  yarn add @vookav2/searchmusic
   ```
 
 ## Usage
@@ -102,7 +102,7 @@ Accurate search for musics, albums, artists, with related playlists and lyrics.
 Import functions that you need.
 
 ```ts
-import { searchSong, searchArtist, searchAlbum, search } from 'searchmusic'
+import { searchSong, searchArtist, searchAlbum, search } from '@vookav2/searchmusic'
 const response = await searchSong('one more light')
 ```
 
@@ -257,7 +257,7 @@ const response = await searchSong('one more light')
 
 ### Get Playlist From URL
 ```ts
-  import { getPlaylistFromUrl } from 'searchmusic'
+  import { getPlaylistFromUrl } from '@vookav2/searchmusic'
   // const url = 'https://www.youtube.com/playlist?list={playlistId}'
   // const url = 'https://www.youtube.com/channel/{channelId}'
   // const url = 'https://www.youtube.com/watch?v={videoId}&list={playlistId}'
@@ -266,7 +266,7 @@ const response = await searchSong('one more light')
 
 ### Query suggestion
 ```ts
-  import { querySuggestion } from 'searchmusic'
+  import { querySuggestion } from '@vookav2/searchmusic'
   const query = 'title'
   const response = await querySuggestion(query)
   /**
