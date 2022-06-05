@@ -14,10 +14,18 @@
     "/build"
   ],
   "author": "mr687 <davinomoehdanino@gmail.com>",
-  "repository": "git@github.com:vookav2/searchmusic.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vookav2/searchmusic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vookav2/searchmusic/issues"
+  },
+  "homepage": "https://github.com/vookav2/searchmusic#readme",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --no-notify --cls src/index.ts",
     "test": "NODE_ENV=test jest",
+    "test:ci": "NODE_ENV=test jest --ci",
     "test:watch": "NODE_ENV=test jest --watch --verbose",
     "build": "rimraf build && tsc -p ./tsconfig.build.json",
     "lint": "eslint . --ext .ts",
