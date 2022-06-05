@@ -8,3 +8,5 @@ coverage
 
 # Ignore all HTML files:
 *.html
+
+README.md
