@@ -4,6 +4,7 @@
 [issues]: https://github.com/vookav2/searchmusic/issues
 [nodejs]: https://nodejs.org/
 [codefactor]: https://www.codefactor.io/repository/github/vookav2/searchmusic
+[codecov]: https://codecov.io/gh/vookav2/searchmusic
 [npm]: https://www.npmjs.com/package/@vookav2/searchmusic
 [versions]: https://www.npmjs.com/package/@vookav2/searchmusic?activeTab=versions
 [buymeacoffee]: https://www.buymeacoffee.com/daphinokio
@@ -18,6 +19,7 @@ Accurate search for musics, albums, artists, with related playlists and lyrics.
 [![Donate](https://img.shields.io/badge/SAWERIA-faae2b?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)][saweria]
 
 [![Tests](https://github.com/vookav2/searchmusic/actions/workflows/test-suites.yml/badge.svg)][actions]
+[![codecov](https://codecov.io/gh/vookav2/searchmusic/branch/main/graph/badge.svg?token=WK8Y4QXDEC)][codecov]
 [![Codefactor](https://www.codefactor.io/repository/github/vookav2/searchmusic/badge)][codefactor]
 [![Latest version](https://img.shields.io/npm/v/@vookav2/searchmusic?color=%2335C757)][versions]
 [![Monthly downloads](https://img.shields.io/npm/dm/@vookav2/searchmusic)][npm]
