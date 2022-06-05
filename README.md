@@ -16,7 +16,6 @@
 Accurate search for musics, albums, artists, with related playlists and lyrics.
 
 [![Donate](https://img.shields.io/badge/donate-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)][buymeacoffee]
-
 [![Donate](https://img.shields.io/badge/SAWERIA-faae2b?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)][saweria]
 
 [![Tests](https://github.com/vookav2/searchmusic/actions/workflows/build.yml/badge.svg)][actions]
