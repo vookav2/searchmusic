@@ -4,16 +4,11 @@
     "lib": ["es6", "dom"],
     "types": ["jest"],
     "moduleResolution": "node",
-    "declaration": true,
-    "outDir": "./build",
     "rootDir": ".",
-    "declarationDir": "./build",
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
     "noEmitOnError": true,
     "noImplicitAny": false
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "build", "**/*.spec.ts", "**/__test__"]
+  }
 }

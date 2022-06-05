@@ -1,14 +1,14 @@
 {
   "name": "searchmusic",
   "version": "1.0.0",
-  "description": "Powerful search engine for musics, albums, artists and fit up them with related playlist and lyrics",
+  "description": "Accurate search for musics, albums, artists, with related playlists and lyrics.",
   "keywords": [
     "search music",
     "youtube music"
   ],
   "license": "MIT",
-  "main": "./build/src/index.js",
-  "types": "./build/src/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "files": [
     "/build"
   ],
@@ -18,7 +18,7 @@
     "dev": "ts-node-dev --respawn --transpile-only --no-notify --cls src/index.ts",
     "test": "NODE_ENV=test jest",
     "test:watch": "NODE_ENV=test jest --watch --verbose",
-    "build": "rimraf build && tsc",
+    "build": "rimraf build && tsc -p ./tsconfig.build.json",
     "lint": "eslint . --ext .ts",
     "pretty": "prettier --write .",
     "prepare": "husky install && yarn build"
