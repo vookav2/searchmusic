@@ -3524,9 +3524,9 @@ slice-ansi@^5.0.0:
     is-fullwidth-code-point "^4.0.0"
 
 songlyrics@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/songlyrics/-/songlyrics-2.3.2.tgz#b29ab961b0f688c00f4e2db8b37086025efb52ec"
-  integrity sha512-ARVUYsdOyF3r+KUen2q62m2gxt/gbZJGUY1UPLxjmBn84sYyjKD3D+Hmi5HvQ4kohbbjiFwV1p+hMvmECxTM/Q==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/songlyrics/-/songlyrics-2.3.3.tgz#0a166eec8ee3dedc99a8cc4e0249d8a87f063426"
+  integrity sha512-NRGVF8sNgnkOWE18cbp4HahhuGrGfcyJqYnGhP0HKLkQ8uY92CvBJnB3Nw+84eYMZtebQ2aCGrcysJVF2g5cLQ==
   dependencies:
     cheerio "^1.0.0-rc.11"
     duck-duck-scrape "^2.2.1"
