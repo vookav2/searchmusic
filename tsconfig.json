@@ -3,6 +3,7 @@
     "target": "es6",
     "lib": ["es6", "dom"],
     "types": ["jest"],
+    "module": "commonjs",
     "moduleResolution": "node",
     "rootDir": ".",
     "esModuleInterop": true,
