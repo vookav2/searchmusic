@@ -4,6 +4,7 @@ import { Song } from './song'
 import { ytError } from '../yt-scraper'
 
 export type Playlist = {
+  type: 'Playlist'
   playlistId: string
   playlistTitle: string
   isInfinite: boolean
@@ -20,9 +21,10 @@ export const makePlaylist = ({
   token,
   length,
   songs,
-}: Omit<Playlist, 'hash'>): Playlist => {
-  const makeHash = (): string => hashMd5(playlistId + playlistTitle)
+}: Partial<Omit<Playlist, 'hash' | 'playlist'>>): Playlist => {
+  const makeHash = (): string => hashMd5(`${playlistId}${playlistTitle}`)
   return {
+    type: 'Playlist',
     playlistId: safety(playlistId).required(ytError.noContent),
     playlistTitle: safety(playlistTitle).required(ytError.noContent),
     isInfinite: isInfinite ?? false,

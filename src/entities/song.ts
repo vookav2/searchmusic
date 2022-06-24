@@ -1,19 +1,13 @@
 import { duration, ytError } from '../yt-scraper'
 import { hashMd5, safety } from '../utils'
+import songlyrics, { TLyrics } from 'songlyrics'
 
 import { Album } from './album'
 import { Channel } from './channel'
 import { Playlist } from './playlist'
-import songlyrics from 'songlyrics'
 
-type Lyrics = {
-  lyrics: string
-  source: {
-    name: string
-    url?: string
-  }
-}
 export type Song = {
+  type: 'Song'
   id: string
   title: string
   url: string
@@ -25,23 +19,14 @@ export type Song = {
   durationString: string
   thumbnail: string
   selected: boolean
-  getLyrics: () => Promise<Lyrics>
+  getLyrics: () => Promise<TLyrics>
   getPlaylist: () => Promise<Playlist>
 }
 
 type SongParams = Omit<
   Song,
-  'url' | 'hash' | 'getLyrics' | 'durationMiliseconds'
-> & {
-  // nextParams: {
-  // 	index: number
-  // 	params: string
-  // 	videoId: string
-  // 	playlistId: string
-  // 	playlistSetVideoId: string
-  // }
-  getLyrics?: Song['getLyrics']
-}
+  'url' | 'hash' | 'getLyrics' | 'durationMiliseconds' | 'type'
+>
 export const makeSong = ({
   id,
   title,
@@ -51,25 +36,18 @@ export const makeSong = ({
   selected,
   thumbnail,
   durationString,
-  getLyrics,
   getPlaylist,
-}: SongParams): Song => {
-  const lyricsFunc = async (): Promise<Lyrics> => {
-    const query = `${title} ${channel.name}`
-    const result = safety(await songlyrics(query)).undefined(ytError.noContent)
-    return {
-      lyrics: result.lyrics,
-      source: {
-        name: result.source.name,
-        url: result.source.link,
-      },
-    }
+}: Partial<SongParams>): Song => {
+  const lyricsFunc = async (): Promise<TLyrics> => {
+    const query = `${title} ${channel?.name || ''}`
+    return safety(await songlyrics(query)).undefined(ytError.noContent)
   }
   const durationMiliseconds = duration.parseMs(
     safety(durationString).required(ytError.noContent),
   )
 
   return {
+    type: 'Song',
     id: safety(id).required(ytError.noContent),
     title: safety(title).required(ytError.noContent),
     channel: safety(channel).required(ytError.noContent),
@@ -79,9 +57,9 @@ export const makeSong = ({
     thumbnail: safety(thumbnail).required(ytError.noContent),
     durationString: duration.toString(durationMiliseconds),
     durationMiliseconds,
-    hash: hashMd5(id, title, channel.name),
+    hash: hashMd5(`${id}${title}`),
     url: `https://music.youtube.com/watch?v=${id}`,
-    getLyrics: getLyrics ?? lyricsFunc,
+    getLyrics: lyricsFunc,
     getPlaylist: safety(getPlaylist).undefined(ytError.noContent),
   }
 }

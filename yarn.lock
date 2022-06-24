@@ -3415,10 +3415,10 @@ slice-ansi@^5.0.0:
     ansi-styles "^6.0.0"
     is-fullwidth-code-point "^4.0.0"
 
-songlyrics@^2.3.2:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/songlyrics/-/songlyrics-2.4.1.tgz#36be54bab76ce5576f039434803c360f7fdb3a41"
-  integrity sha512-+Tf+Bvo3XCobeEUNKyfIGPybJ9VZkhWeECXW5RqwAiPoUbapdrr+T2+AgEYEltCEZhWkLLj5qfIOc06jbGiA1Q==
+songlyrics@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/songlyrics/-/songlyrics-2.4.2.tgz#33f66bf525901d6a1b27b900c70f3835a4841c4e"
+  integrity sha512-yy3SXrePC9kn6Ph6aDYQfJS5srUdS1fcWEuNYYGhylzVgj29s64gpllJnX/U3nEakDYnInjwS8bYF0s5vR9ZyQ==
   dependencies:
     node-html-parser "^5.3.3"
 
