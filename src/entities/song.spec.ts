@@ -116,6 +116,6 @@ describe('makeSong', () => {
         name: fakeChannel.name,
       },
     })
-    expect(makeSong(fakeSong).hash).toBe('be05d85aca6fc668ca2d9779ce735fad')
+    expect(makeSong(fakeSong).hash).toBe('42cd07e9cb1f93edd272874613ce85d7')
   })
 })

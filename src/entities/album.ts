@@ -5,12 +5,13 @@ import { Playlist } from './playlist'
 import { ytError } from '../yt-scraper'
 
 export type Album = {
+  type: 'Album'
   id: string
   title: string
   thumbnail: string
   explicit: boolean
   hash: string
-  channel?: Pick<Channel, 'id' | 'name'>
+  channel: Pick<Channel, 'id' | 'name'>
   getPlaylist: () => Promise<Playlist>
 }
 
@@ -21,12 +22,13 @@ export const makeAlbum = ({
   title,
   channel,
   getPlaylist,
-}: Omit<Album, 'hash'>): Album => ({
+}: Partial<Omit<Album, 'hash' | 'type'>>): Album => ({
+  type: 'Album',
   id: safety(id).required(ytError.noContent),
   title: safety(title).required(ytError.noContent),
   channel: safety(channel).required(ytError.noContent),
   thumbnail: safety(thumbnail).required(ytError.noContent),
   explicit: explicit ?? false,
-  hash: hashMd5(`${id}${title}${channel?.name}`),
+  hash: hashMd5(`${id}${title}`),
   getPlaylist: safety(getPlaylist).undefined(ytError.noContent),
 })

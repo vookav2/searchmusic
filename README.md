@@ -133,6 +133,7 @@ const response = await searchSong('one more light')
 
 ```js
 {
+  title: string,
   lyrics: string,
   source: {
     name: string,
@@ -160,7 +161,7 @@ const response = await searchSong('one more light')
     id: string,
     title: string,
     url: string,
-    hash: string, // md5(id + title + channel.name)
+    hash: string, // md5(id + title)
     channel: {
       id: string,
       name: string,
@@ -199,7 +200,7 @@ const response = await searchSong('one more light')
     title: string,
     thumbnail: string,
     explicit: boolean,
-    hash: string, // md5(id + title + channel.name)
+    hash: string, // md5(id + title)
     channel: {
       id: string,
       name: string,
@@ -244,11 +245,11 @@ const response = await searchSong('one more light')
 ```js
 {
   search: {
-    type: string,
+    type: 'Song' | 'Album' | 'Channel' | 'Playlist' | 'Unknown',
     query: string,
     correctedQuery: string,
   },
-  result: Song | Album | Channel
+  result: Song | Album | Channel | Playlist | undefined
 }
 ```
 
