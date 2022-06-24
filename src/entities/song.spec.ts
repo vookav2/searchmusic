@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { makeFakeAlbum } from '../__test__/fixtures/make-fake-album'
 import { makeFakeChannel } from '../__test__/fixtures/make-fake-channel'
-import { makeFakeLyrics } from '../__test__/fixtures/make-fake-lyrics'
 import { makeFakePlaylist } from '../__test__/fixtures/make-fake-playlist'
 import { makeFakeSong } from '../__test__/fixtures/make-fake-song'
 import { makeSong } from './song'
@@ -70,21 +69,6 @@ describe('makeSong', () => {
     const song = makeSong(fakeSong)
     expect(song.getPlaylist).toBeDefined()
     await expect(song.getPlaylist()).resolves.toBeDefined()
-  })
-  it('can have a get lyrics function', async () => {
-    const songWithGetLyrics = makeSong(
-      makeFakeSong({
-        getLyrics: () => Promise.resolve(makeFakeLyrics()),
-      }),
-    )
-    const songWithoutGetlyrics = makeSong(
-      makeFakeSong({
-        getLyrics: undefined,
-      }),
-    )
-    expect(songWithGetLyrics.getLyrics).toBeDefined()
-    expect(songWithoutGetlyrics.getLyrics).toBeDefined()
-    await expect(songWithGetLyrics.getLyrics()).resolves.toBeDefined()
   })
   it('have a valid url', () => {
     const fakeSong = makeFakeSong({

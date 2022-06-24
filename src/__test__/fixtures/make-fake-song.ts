@@ -1,7 +1,6 @@
 import { Song } from '../../entities'
 import { makeFakeAlbum } from './make-fake-album'
 import { makeFakeChannel } from './make-fake-channel'
-import { makeFakeLyrics } from './make-fake-lyrics'
 import { makeFakePlaylist } from './make-fake-playlist'
 
 export const makeFakeSong = (fakeParams?: Partial<Song>) => {
@@ -25,7 +24,6 @@ export const makeFakeSong = (fakeParams?: Partial<Song>) => {
     durationMiliseconds: 0,
     durationString: '0:0',
     thumbnail: 'fake-song-thumbnail',
-    getLyrics: () => Promise.resolve(makeFakeLyrics()),
     getPlaylist: () => Promise.resolve(makeFakePlaylist()),
   }
 
