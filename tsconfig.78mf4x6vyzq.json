@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "types": [
+      "jest"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmitOnError": true,
+    "noImplicitAny": false
+  },
+  "files": [
+    "/Users/def/.dev/labs/searchmusic/src/use-cases/search-album.ts",
+    "/Users/def/.dev/labs/searchmusic/src/use-cases/search-artist.ts",
+    "/Users/def/.dev/labs/searchmusic/src/yt-scraper/yt-search.ts",
+    "/Users/def/.dev/labs/searchmusic/src/yt-scraper/yt-util.ts"
+  ],
+  "include": []
+}

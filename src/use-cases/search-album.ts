@@ -10,24 +10,40 @@ import {
 import { makeAlbum } from '../entities'
 
 export const albumMapping = (raw: any) => {
-  const [rawTitle, secondColumns] = raw.flexColumns
-  const [, , rawArtist] =
-    secondColumns.musicResponsiveListItemFlexColumnRenderer.text.runs
+  let title: any = undefined
+  let channel: any = undefined
+
+  if (raw.flexColumns) {
+    const [rawTitle, secondColumns] = raw.flexColumns
+    const [, , rawArtist] =
+      secondColumns.musicResponsiveListItemFlexColumnRenderer.text.runs
+
+    title = joinRunsText(
+      rawTitle?.musicResponsiveListItemFlexColumnRenderer?.text,
+    )
+    channel = {
+      id: mapBrowseId(rawArtist),
+      name: rawArtist.text,
+    }
+  } else {
+    const [, , rawArtist] = raw.subtitle.runs
+    title = joinRunsText(raw.title)
+    channel = {
+      id: mapBrowseId(rawArtist),
+      name: rawArtist.text,
+    }
+  }
+
   const [rawPlayShuffle] = raw.menu.menuRenderer.items
   const playlistEndpoint = mapNavigationEndpoint(
     rawPlayShuffle?.menuNavigationItemRenderer?.navigationEndpoint,
   )
   return makeAlbum({
     id: mapBrowseId(raw),
-    title: joinRunsText(
-      rawTitle?.musicResponsiveListItemFlexColumnRenderer?.text,
-    ),
-    explicit: raw.badges !== undefined,
+    title,
+    explicit: (raw.badges || raw.subtitleBadges) !== undefined,
     thumbnail: mapThumbnail(raw.thumbnail),
-    channel: {
-      id: mapBrowseId(rawArtist),
-      name: rawArtist.text,
-    },
+    channel,
     getPlaylist: makePlaylistFunc({
       params: playlistEndpoint.params,
       playlistId: playlistEndpoint.playlistId,

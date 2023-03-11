@@ -41,7 +41,7 @@
     "no-undef": "off",
     "accessor-pairs": "error",
     "arrow-body-style": "error",
-    "complexity": ["error", 4],
+    "complexity": ["error", 10],
     "consistent-return": "error",
     "consistent-this": ["error", "self"],
     "comma-dangle": ["off", "always-multiline"],

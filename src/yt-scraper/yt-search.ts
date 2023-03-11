@@ -39,11 +39,7 @@ const getQueryCorrection = (raw: any[]): string | undefined => {
 
 // eslint-disable-next-line complexity
 const getRawType = (raw: any, searchType: SearchType): ResultType => {
-  const getType = (rawType: any) => {
-    const [, type] = rawType.musicResponsiveListItemRenderer.flexColumns
-    return type?.musicResponsiveListItemFlexColumnRenderer?.text?.runs?.at(0)
-      ?.text
-  }
+  const getType = (rawType: any) => rawType?.subtitle?.runs?.at(0)?.text
 
   switch (searchType) {
     case 'Songs':
@@ -93,20 +89,35 @@ export const ytSearch = async (
   }
 
   const [topResult] = await tryToSearch()
-  const rawContent = topResult?.musicShelfRenderer?.contents?.shift()
 
-  if (!rawContent?.musicResponsiveListItemRenderer) {
-    makeError(ytError.noContent)
+  let rawContent: any = undefined
+
+  if (type === 'TopResults') {
+    rawContent = topResult?.musicCardShelfRenderer
+    if (!rawContent) {
+      makeError(ytError.noContent)
+    }
+  } else {
+    rawContent = topResult?.musicShelfRenderer?.contents?.shift()
+    if (!rawContent?.musicResponsiveListItemRenderer) {
+      makeError(ytError.noContent)
+    }
   }
+
   const rawType = getRawType(rawContent, type)
   if (!rawType) {
     makeError(ytError.invalidQuery)
   }
 
+  rawContent =
+    type === 'TopResults'
+      ? rawContent
+      : rawContent.musicResponsiveListItemRenderer
+
   return {
     query: originalQuery,
     correctedQuery: query !== originalQuery ? query : undefined,
     rawType,
-    rawContent: rawContent.musicResponsiveListItemRenderer,
+    rawContent,
   }
 }
