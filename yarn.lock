@@ -1848,6 +1848,11 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.5.tgz#76c8584f4fc843db64702a6bd04ab7a8bd666da3"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
 
+follow-redirects@^1.15.1:
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+  integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+
 form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
@@ -3415,11 +3420,12 @@ slice-ansi@^5.0.0:
     ansi-styles "^6.0.0"
     is-fullwidth-code-point "^4.0.0"
 
-songlyrics@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/songlyrics/-/songlyrics-2.4.2.tgz#33f66bf525901d6a1b27b900c70f3835a4841c4e"
-  integrity sha512-yy3SXrePC9kn6Ph6aDYQfJS5srUdS1fcWEuNYYGhylzVgj29s64gpllJnX/U3nEakDYnInjwS8bYF0s5vR9ZyQ==
+songlyrics@^2.4.5:
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/songlyrics/-/songlyrics-2.4.5.tgz#048f860d467a0e3d7cba65c0a80f0396c020d1d6"
+  integrity sha512-Ncue046yIWUnnQTuk4dQMJq6i3VvNZeDGlFFW4/1sBmCUfzc9JXP8kAaxhT3qVt9bTRVIDRn/Kk/gzF33CoqvQ==
   dependencies:
+    follow-redirects "^1.15.1"
     node-html-parser "^5.3.3"
 
 source-map-support@^0.5.12, source-map-support@^0.5.6:
