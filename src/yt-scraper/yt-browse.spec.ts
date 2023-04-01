@@ -30,7 +30,7 @@ describe('Yt Browse Request', () => {
     expect(endpoint.videoId).toBeDefined()
   })
   it('can browse a lyrics', async () => {
-    const response = await ytBrowseRequest('MPLYt_ZrU0BSKAZdU', 'Lyrics')
+    const response = await ytBrowseRequest('MPLYt_yUBwd9PN1vA-8', 'Lyrics')
     expect(response.type).toBe('Lyrics')
     expect(typeof response.rawContent).toBe('string')
   })
