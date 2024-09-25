@@ -1,6 +1,6 @@
 {
   "name": "@vookav2/searchmusic",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "description": "Accurate search for musics, albums, artists, with related playlists and lyrics.",
   "keywords": [

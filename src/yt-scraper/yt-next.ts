@@ -11,6 +11,9 @@ const getTabsContent = (raw: any): any =>
     ?.watchNextTabbedResultsRenderer?.tabs
 const getUpnextContent = (raw: any): any =>
   raw?.tabRenderer?.content?.musicQueueRenderer?.content?.playlistPanelRenderer
+const getUpnextHeader = (raw: any): any =>
+  raw?.tabRenderer?.content?.musicQueueRenderer?.header
+    ?.musicQueueHeaderRenderer
 const itHasPreview = (raw: any[]): number =>
   raw.findIndex(x => x.automixPreviewVideoRenderer)
 const getPreviewPlaylistParams = (
@@ -135,9 +138,8 @@ export const ytNextRequest = async ({
     rawUpNextContent.contents.splice(previewIndex, 1)
   }
 
-  const playlistTitle =
-    joinRunsText(rawUpNextContent?.shortBylineText) +
-    ` (${rawUpNextContent.title})`
+  const header = getUpnextHeader(rawUpNext)
+  const playlistTitle = joinRunsText(header?.subtitle)
   const isInfinite = rawUpNextContent.isInfinite
   if (isInfinite) {
     token = getContinuationToken(rawUpNextContent)
